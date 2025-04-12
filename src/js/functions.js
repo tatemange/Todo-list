@@ -1,6 +1,6 @@
 
 
-function createHtmlElement (tag, attrs={}) {
+export function createHtmlElement (tag, attrs={}) {
     const element = document.createElement(tag);
     for(let [key, value] of Object.entries(attrs)) {
         if(key === 'text') 

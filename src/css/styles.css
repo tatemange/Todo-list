@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: "myFont";
     src: url(../fonts/SF-Pro-Text.woff2);
@@ -19,7 +18,7 @@
     --label: #fff;
     --secondary-label: rgb(134, 134, 139);
     --tertiary-label: #666;
-    --quaternary-label: #444;    
+    --quaternary-label: #444;
     --border-color: rgba(255, 255, 255, 0.1);
     --border: 1px solid var(--border-color);
     --box-shadow: 2px 2px 12px rgba(255, 255, 255, 0.03);
@@ -34,7 +33,9 @@
     --height-second-nav: 38px;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     margin: 0;
     padding: 0;
     color: currentColor;
@@ -73,11 +74,14 @@ body {
     overflow-y: auto;
 }
 
-.navbar > * {
+.navbar>* {
     padding: 10px;
     width: 100%;
 }
 
+.add-group {
+    cursor: pointer;
+}
 
 
 .navbar .title-app {
@@ -114,15 +118,15 @@ body {
     fill: var(--label);
 }
 
-.navbar .search-bar:has( input:focus ) {
+.navbar .search-bar:has(input:focus) {
     box-shadow: 0 0 0 1px var(--first-color);
     border-color: var(--first-color);
 }
 
-.navbar .search-bar:has( input:hover ) svg path {
+.navbar .search-bar:has(input:hover) svg path {
     opacity: 1;
 }
-  
+
 .navbar .search-bar input {
     width: 100%;
     height: 30px;
@@ -141,6 +145,7 @@ body {
     gap: 10px;
     list-style: none;
 }
+
 .navbar .default_folder a {
     text-decoration: none;
     color: var(--label);
@@ -230,7 +235,7 @@ body {
 .list-container {
     display: flex;
     flex-direction: column;
-    gap: 10px; 
+    gap: 10px;
 }
 
 
@@ -309,7 +314,7 @@ body {
     position: fixed;
     top: 0;
     left: calc(var(--width-nav));
-    height:  var(--height-second-nav);
+    height: var(--height-second-nav);
     width: calc(100% - var(--width-nav));
     display: flex;
     align-items: center;
@@ -337,12 +342,9 @@ body {
     fill: var(--label);
 }
 
-
 .container .second-navbar .right img:active {
     transform: scale(0.9);
 }
-
-
 
 .container .container-tasks {
     display: flex;
@@ -351,7 +353,7 @@ body {
     margin-top: var(--height-second-nav);
 }
 
-.container .container-tasks > * {
+.container .container-tasks>* {
     padding: 1rem;
 }
 
@@ -366,7 +368,6 @@ body {
     font-weight: 600;
     color: var(--first-color);
 }
-
 
 .container-tasks .title-zone .sub-title {
     display: flex;
@@ -406,8 +407,13 @@ body {
 .container .group .title-group {
     display: flex;
     align-items: center;
-    justify-content: space-between;    
+    justify-content: space-between;
     padding-right: 30px;
+}
+
+.container .group .title-group h3 {
+    text-transform: capitalize;
+    font-weight: bold;
 }
 
 .container .title-group svg {
@@ -461,6 +467,7 @@ body {
     padding-left: 18px;
     color: var(--secondary-label);
     line-height: 1.1;
+    margin-top: 4px;
 }
 
 .container .task .other-info img {
@@ -468,6 +475,175 @@ body {
     height: 160px;
     width: 100%;
     object-fit: cover;
+}
+
+
+
+.container-tasks.collum .group-task {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.container-tasks.collum .group-task .group {
+    gap: 0;
+}
+
+.container-tasks.collum .group-task .group .title-group {
+    margin-bottom: 8px;
+}
+
+.container-tasks.collum .group-task .task {
+    border-radius: 0px;
+    position: relative;
+    gap: 0;
+    background-color: transparent;
+}
+
+.container-tasks.collum .group-task .task::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 28px;
+    width: calc(100% - 28px);
+    height: 1px;
+    background: var(--border-color);
+}
+
+.container-tasks.collum .group-task .task:last-child::after {
+    content: none;
+}
+
+.container-tasks.collum .group-task .task img {
+    width: 100px;
+    margin-left: 20px;
+    height: auto;
+    cursor: pointer;
+    transition: all var(--t);
+}
+
+.container-tasks.collum .group-task .task img:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+/* form */
+.formGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all var(--t);
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(30px) saturate(180%);
+    z-index: 100;
+}
+
+.formGroup.mask {
+    overflow: hidden;
+    border-radius: 50%;
+    transform: scale(0);
+}
+
+
+.formGroup fieldset {
+    border: var(--border);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    background-color: var(--background-light);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: min(100%, 300px);
+}
+
+.formGroup .note {
+    color: var(--secondary-label);
+}
+
+.formGroup fieldset h1 {
+    font-size: clamp(1.2em, 2vw + 1em, 1.8em);
+    text-transform: uppercase;
+    width: fit-content;
+}
+
+.items-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.item-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.item-form-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.label-form {
+    font-size: 1.1em;
+    color: var(--secondary-label);
+    text-transform: capitalize;
+    position: absolute;
+    left: 12px;
+    transition: all var(--t);
+}
+
+.item-form:has(input:not(:placeholder-shown)) label,
+.item-form:has(input:focus, input.activate) label {
+    top: calc((-0.8em - 2px * 2) / 2);
+    font-size: .8em;
+    background-color: var(--background-alt);
+    padding: 2px 5px;
+    border-radius: 10px;
+    border: var(--border);
+    color: var(--tertiary-label);
+}
+
+.item-form input {
+    height: 40px;
+    background: var(--background-alt);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    outline: none;
+    padding: 0 12px;
+    padding-top: 12px;
+    font-size: 1em;
+}
+
+.item-form button {
+    width: 100%;
+    height: 30px;
+    border-radius: var(--border-radius);
+    border: none;
+    background-color: var(--first-color);
+    text-transform: capitalize;
+    font: 1em;
+    cursor: pointer;
+    transition: transform var(--t);
+}
+
+.formGroup fieldset .item.row button:first-child {
+    background-color: var(--background-alt);
+}
+
+.formGroup fieldset .item.row button:active {
+    transform: scale(0.97);
 }
 
 

@@ -41,7 +41,7 @@
                         <span class="number">6</span>
                     </div>
                     <div class="down">
-                        <span class="name">Today</span>
+                        <span class="name" data-set="today">Today</span>
                     </div>
                 </a>
             </li>
@@ -92,7 +92,7 @@
                         <span class="number">0</span>
                     </div>
                     <div class="down">
-                        <span class="name">Assigned</span>
+                        <span class="name" data-set="assigned">Assigned</span>
                     </div>
                 </a>
             </li>
@@ -103,7 +103,7 @@
                         <span class="number">6</span>
                     </div>
                     <div class="down">
-                        <span class="name">All</span>
+                        <span class="name" data-set="all">All</span>
                     </div>
                 </a>
             </li>
@@ -114,7 +114,7 @@
                         <span class="number"></span>
                     </div>
                     <div class="down">
-                        <span class="name">Completed</span>
+                        <span class="name" data-set="completed">Completed</span>
                     </div>
                 </a>
             </li>
@@ -126,7 +126,7 @@
                         <span class="number">4</span>
                     </div>
                     <div class="down">
-                        <span class="name">Family Task</span>
+                        <span class="name" data-set="familyTask">Family Task</span>
                     </div>
                 </a>
             </li>
@@ -136,8 +136,8 @@
             <span class="list-text">list</span>
             <ul class="list">
                 <li>
-                    <span class="icon">m</span>
-                    <a href="#">maison</a>
+                    <span class="icon">C</span>
+                    <a href="#">Calendar</a>
                 </li>
 
                 <li>
@@ -154,8 +154,8 @@
 
         <div class="end">
             <button class="add_list">
-                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" xml:space="preserve">
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"
+                    xml:space="preserve">
                     <circle style="fill:#43B05C;" cx="25" cy="25" r="25" />
                     <line
                         style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
@@ -170,105 +170,167 @@
     </nav>
     <div class="container">
         <div class="second-navbar">
-            <div class="left"></div>
-            <div class="right">
-                <svg class="add-group" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                    version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512"
-                    style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512" height="512">
-                    <g>
-                        <path
-                            d="M480,224H288V32c0-17.673-14.327-32-32-32s-32,14.327-32,32v192H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h192v192   c0,17.673,14.327,32,32,32s32-14.327,32-32V288h192c17.673,0,32-14.327,32-32S497.673,224,480,224z" />
-                    </g>
+            <div class="title-zone">
+                <h1 class="task-name">Today</h1>
+                <span class="sub-title">
+                    <span class="text">2 task is completed</span>
+                    <button class="clear">Clear</button>
+                </span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="items">
+                <svg version="1.1" id="Capa_1" viewBox="0 0 50 50" xml:space="preserve">
+                    <circle style="fill:var(--first-color);" cx="25" cy="25" r="25" />
+                    <line
+                        style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        x1="25" y1="13" x2="25" y2="38" />
+                    <line
+                        style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                        x1="37.5" y1="25" x2="12.5" y2="25" />
                 </svg>
             </div>
         </div>
 
-        <div class="container-tasks collum today-container">
-            <div class="title-zone">
-                <h1 class="task-name">Today</h1>
-                <span class="sub-title">
-                    <span class="text">2 Completed</span>
-                    <button class="clear">Clear</button>
-                </span>
-            </div>
+        <div class="container-tasks colum">
+            <aside class="aside-left">
+                <div class="group-task">
+                    <!-- <div class="group">
+                        <div class="title-group">
+                            <h3>Danny</h3>
+                            <button class="more">Add task</button>
+                        </div>
 
-            <div class="group-task">
-                <div class="group">
-                    <div class="title-group">
-                        <h3>Danny</h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"
-                            width="512" height="512">
-                            <circle cx="2" cy="12" r="2" />
-                            <circle cx="12" cy="12" r="2" />
-                            <circle cx="22" cy="12" r="2" />
+                        <div class="task">
+                            <div class="default">
+                                <span class='svg'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="512"
+                                    height="512">
+                                    <path
+                                        d="M12,0A12,12,0,1,0,24,12,12,12,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10,10,0,0,1,12,22Z" />
+                                </svg>
+                                </span>
+                                <span class="task-text">👨‍🍳 cook banana</span>
+                            </div>
+                            <div class="other-info">
+                                <span class="day">Today, 6:00 PM</span>
+                                <div class="imgs">
+                                    <img src="./src/images/cook.png" alt="">
+                                    <img src="./src/images/cook.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> -->
+                </div>
+            </aside>
+            <div class="calendar mask">
+                <div class="header">
+                    <div class="left">
+                        <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="512"
+                            height="512">
+                            <path
+                                d="M17.17,24a1,1,0,0,1-.71-.29L8.29,15.54a5,5,0,0,1,0-7.08L16.46.29a1,1,0,1,1,1.42,1.42L9.71,9.88a3,3,0,0,0,0,4.24l8.17,8.17a1,1,0,0,1,0,1.42A1,1,0,0,1,17.17,24Z" />
                         </svg>
                     </div>
-
-                    <div class="task">
-                        <div class="default">
-                            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="m12,24C5.383,24,0,18.617,0,12S5.383,0,12,0s12,5.383,12,12-5.383,12-12,12Zm0-23C5.935,1,1,5.935,1,12s4.935,11,11,11,11-4.935,11-11S18.065,1,12,1Z" />
-                            </svg>
-                            <span class="task-text">🤟 yo nigga</span>
-                        </div>
+                    <div class="center">
+                        <span class="month">October</span>
+                        <span class="year">2023</span>
+                    </div>
+                    <div class="right">
+                        <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="512"
+                            height="512">
+                            <path
+                                d="M7,24a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l8.17-8.17a3,3,0,0,0,0-4.24L6.29,1.71A1,1,0,0,1,7.71.29l8.17,8.17a5,5,0,0,1,0,7.08L7.71,23.71A1,1,0,0,1,7,24Z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="days">
+                        <span class="day">Mon</span>
+                        <span class="day">Tue</span>
+                        <span class="day">Wed</span>
+                        <span class="day">Thu</span>
+                        <span class="day">Fri</span>
+                        <span class="day">Sat</span>
+                        <span class="day">Sun</span>
                     </div>
 
-                    <div class="task">
-                        <div class="default">
-                            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="m12,24C5.383,24,0,18.617,0,12S5.383,0,12,0s12,5.383,12,12-5.383,12-12,12Zm0-23C5.935,1,1,5.935,1,12s4.935,11,11,11,11-4.935,11-11S18.065,1,12,1Z" />
-                            </svg>
-                            <span class="task-text">🎲 go play game</span>
-                        </div>
-                        <div class="other-info">
-                            <span class="day">Today</span>
-                        </div>
+                    <div class="dates">
                     </div>
-
-
-                    <div class="task">
-                        <div class="default">
-                            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="m12,24C5.383,24,0,18.617,0,12S5.383,0,12,0s12,5.383,12,12-5.383,12-12,12Zm0-23C5.935,1,1,5.935,1,12s4.935,11,11,11,11-4.935,11-11S18.065,1,12,1Z" />
-                            </svg>
-                            <span class="task-text">👨‍🍳 cook banana</span>
-                        </div>
-                        <div class="other-info">
-                            <span class="day">Today, 6:00 PM</span>
-                            <img src="./src/images/cook.png" alt="">
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
+
+        <form action="#" class="formGroup mask">
+            <fieldset>
+                <h1>create a new group</h1>
+                <span class="note">
+                    Entrez le nom de votre groupe et cliquez sur le bouton "create +" pour creer un nouveau groupe.
+                </span>
+                <div class="items items-form">
+                    <div class="item item-form">
+                        <label for="nameGroup" class="label-form">group name</label>
+                        <input type="text" id="nameGroup" minlength="1" required placeholder="" />
+                    </div>
+                    <div class="item item-form">
+                        <label for="nameFolder" class="label-form">folder name (facultatif)</label>
+                        <input type="text" id="nameFolder" minlength="1" required placeholder="" />
+                    </div>
+                    <div class="item row item-form-row item-form">
+                        <button type="reset">close</button>
+                        <button type="submit">create +</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+                        priorite: 1,
+                        categorie: "projet",
+                        fichiersJoints: [],
+        <form action="#" class="formTask masks">
+            <fieldset>
+                <h1>create a new Task</h1>
+                <span class="note">
+                    Remplie les different champs suivant pour creer une nouvelle tache.
+                </span>
+                <div class="items items-form">
+                    <div class="item item-form">
+                        <label for="title" class="label-form">Title</label>
+                        <input type="text" id="title" minlength="1" required placeholder="" />
+                    </div>
+                    <div class="item item-form">
+                        <label for="desc" class="label-form">Description *</label>
+                        <input type="text" id="desc" minlength="1" required placeholder="" />
+                    </div>
+
+                    <div class="item item-form">
+                        <label for="taskDate" class="label-form">Date and Time (facultatif)</label>
+                        <input type="datetime-local" id="taskDate" minlength="1" placeholder="" />
+                    </div>
+
+
+                    <div class="item p">
+                        <span class="priority">
+                            Priority
+                        </span>
+                        <div class="prioritys">
+                            <button class="basse active">Basse</button>
+                            <button class="moyenne">Moyenne</button>
+                            <button class="haute">Haute</button>
+                            <button class="important">important</button>
+                        </div>
+                    </div>
+
+                    <div class="item row item-form-row item-form">
+                        <button type="reset">close</button>
+                        <button type="submit">create +</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
     </div>
-
-    <form action="#" class="formGroup mask" >
-        <fieldset>
-            <h1>create a new group</h1>
-            <span class="note">
-                Entrez le nom de votre groupe et cliquez sur le bouton "create +" pour creer un nouveau groupe.
-            </span>
-            <div class="items items-form">
-                <div class="item item-form">
-                    <label for="nameGroup" class="label-form">group name</label>
-                    <input type="text" id="nameGroup" minlength="1" required placeholder="" />
-                </div>
-                <div class="item row item-form-row item-form">
-                    <button type="reset">close</button>
-                    <button type="submit">create +</button>
-                </div>
-            </div>
-        </fieldset>
-    </form>
-
 </body>
 
 </html>

@@ -1,4 +1,5 @@
 
+export const wait = (t) => new Promise((r) => setTimeout(r, t))
 
 export function createHtmlElement (tag, attrs={}) {
     const element = document.createElement(tag);
@@ -7,8 +8,6 @@ export function createHtmlElement (tag, attrs={}) {
             element.textContent = value;
         else if(key === 'html') 
             element.innerHTML = value;
-        else if(key === 'class') 
-            element.classList.add(value);
         else if(key === 'id') 
             element.id = value;
         else if(key === 'data') {
@@ -20,4 +19,3 @@ export function createHtmlElement (tag, attrs={}) {
     }
     return element;
 }
-

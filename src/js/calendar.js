@@ -19,6 +19,7 @@ export class Calendar {
         this.leftBtn = this.calendar.querySelector(".left svg")
         this.rightBtn = this.calendar.querySelector(".right svg")
         
+        
         this.leftBtn.addEventListener("click", this.prevMonth.bind(this))
         this.rightBtn.addEventListener("click", this.nextMonth.bind(this))
 

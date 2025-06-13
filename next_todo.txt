@@ -1,0 +1,33 @@
+
+# 🚀 Next-Gen Todo List — Roadmap
+
+## 1. Super Base solide
+- [ ] Tâches, groupes, catégorisation, fichiers joints, drag & drop, calendrier intégré, responsive, modes clair/sombre, localStorage.
+
+## 2. Collaboration et partage avancé
+- [ ] Multi-utilisateur, gestion de rôles (admin/lecteur), chat de tâches, notifications en temps réel.
+
+## 3. Statistiques et Motivation
+- [ ] Graphe productivité, heatmap, badges, gamification.
+- [ ] Rapports et feedbacks personnalisés
+- [ ] Score anti-procrastination et objectifs hebdo personnalisés.
+
+## 4. IA et Automatisation
+- [ ] Suggestions IA : prochaine tâche prioritaire, planification intelligente.
+- [ ] Génération automatique de sous-tâches.
+- [ ] Ajout de tâches et commandes vocales.
+
+## 5. Contextes dynamiques et intégration
+- [ ] Contextualisation (“travail”, “maison”, “déplacement”).
+- [ ] Synchro & import/export Google Calendar, Outlook, Notion.
+- [ ] API/plugins pour ajouter des fonctionnalités (ex : Pomodoro, Time tracking…).
+
+## 6. Personnalisation extrême
+- [ ] Thèmes avancés, plugins, dashboard personnalisable.
+- [ ] Widgets sur bureau/mobile.
+- [ ] Shortcuts clavier/mouse, notification push.
+
+---
+
+**Objectif :**
+Créer la Todo la plus flexible, intelligente et motivante de sa génération, pensée pour *vraiment faire gagner du temps* et s’adapter à chaque utilisateur, solo ou équipe.

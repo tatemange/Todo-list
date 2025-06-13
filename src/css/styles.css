@@ -34,10 +34,11 @@
     --font-size: 15px;
     --border-radius: .5rem;
     --width-nav: max(calc(100% * 0.20), 300px);
+    --black: black;
+    --white: white;
     --t: 0.2s;
     --width-container: calc(100% - var(--width-nav));
     --height-second-nav: calc(58px + 2rem);
-    --width-calendar: calc((100% - var(--width-nav)) * .70);
 }
 
 /* 🌞 Thème clair si détecté */
@@ -342,6 +343,7 @@ body {
 
 .container {
     display: flex;
+    padding-bottom: 3.5rem;
     flex-direction: column;
 }
 
@@ -374,16 +376,6 @@ body {
     gap: 10px;
     width: 100%;
 }
-
-.container .container-tasks .calendar {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    overflow: hidden;
-    width: 0;
-    z-index: 1;
-}
-
 
 .container .container-tasks .aside-left>* {
     padding: 1rem;
@@ -433,7 +425,7 @@ body {
 .container-tasks .group-task .group {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: .5rem;
     position: relative;
 }
 
@@ -441,7 +433,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-right: 30px;
 }
 
 .container .group .title-group .more {
@@ -518,7 +509,7 @@ body {
     font-size: 90%;
 }
 
-.container .task .other-info>* {
+.container .task .other-info > * {
     margin-top: .35rem;
 }
 
@@ -537,13 +528,13 @@ body {
     gap: .5rem;
     position: relative;
     grid-template-columns: repeat(2, 1fr);
+    margin-left: 1.5rem;
 }
 
 .container .task .other-info img {
     border-radius: var(--border-radius);
-    max-height: 100px;
     width: 100%;
-    aspect-ratio: 1.25;
+    /* aspect-ratio: 1.25; */
     object-fit: cover;
     cursor: pointer;
     transition: var(--t);
@@ -557,30 +548,46 @@ body {
 .container-tasks.column .group-task {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 1rem;
 }
 
 .container-tasks.column .group-task .group {
+    padding: .5rem;
     gap: 0;
+    border-radius: calc(.5rem + .8rem);
 }
 
 .container-tasks.column .group-task .group .title-group {
-    margin-bottom: 8px;
+    padding: .5rem;
 }
 
 .container-tasks.column .group-task .task {
-    border-radius: 0;
     position: relative;
     gap: 0;
+    padding: .5rem;
+    padding-bottom: .25rem;
     background-color: transparent;
+    background-color: var(--background-alt);
+    padding-bottom: 1rem;
+}
+
+
+
+.container-tasks.column .group-task .task:nth-child(2) {
+    border-radius: .8rem .8rem 0 0;
+}
+
+.container-tasks.column .group-task .task:last-child {
+    border-radius: 0 0 1rem 1rem;
+    padding-bottom: 2rem;
 }
 
 .container-tasks.column .group-task .task::after {
     content: "";
     position: absolute;
-    bottom: 0;
-    left: 28px;
-    width: calc(100% - 28px);
+    bottom: .7rem;
+    left: 32px;
+    width: calc(100% - 32px);
     height: 1px;
     background: var(--border-color);
 }
@@ -589,98 +596,23 @@ body {
     content: none;
 }
 
+.container-tasks.column .imgs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+    gap: .5rem !important;
+}
+
 .container-tasks.column .group-task .task img {
-    max-width: 120px;
-    margin-left: 20px;
-    height: auto;
+    height: 100%;
     cursor: pointer;
     transition: all var(--t);
+    border-radius: .5rem;
 }
+
 
 .container-tasks.column .group-task .task img:hover {
-    transform: scale(1.05);
-}
-
-.container-tasks.column .calendar {
-    padding-top: 10px;
-    width: var(--width-calendar);
-    height: 100%;
-    border-left: var(--border);
-}
-
-.container-tasks .calendar .body {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.container-tasks .calendar .body>* {
-    padding-inline: 1rem;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 1px;
-}
-
-.container-tasks .calendar .body .day {
-    text-align: center;
-}
-
-.container-tasks .calendar .body .date {
-    background: var(--background-light);
-    height: 65px;
-    border-radius: 3px;
-    display: flex;
-    flex-direction: column;
-}
-
-
-.container-tasks .calendar .body .date.mask {
-    transform: scale(0);
-}
-
-.container-tasks .calendar .date .number {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    padding: 4px;
-}
-
-.container-tasks .calendar .body .date {
-    overflow: hidden;
-}
-
-.container-tasks .calendar .body .date.today .number {
-    color: var(--first-color);
-}
-
-.container-tasks .calendar .date .task-number {
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    color: var(--first-color);
-    font-size: 1.4em;
-}
-
-.container .calendar .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 6px 6px;
-}
-
-.container .calendar .header svg {
-    width: 1.5em;
-    height: auto;
-    fill: var(--label);
-    cursor: pointer;
-    padding: 3px;
-    border-radius: 50%;
-    transition: var(--t);
-}
-
-.container .calendar .header svg:active {
-    background-color: var(--background-alt);
+    transform: scale(1.025);
 }
 
 
@@ -878,35 +810,4 @@ body {
     .container-tasks .group-task {
         grid-template-columns: repeat(2, 1fr);
     }
-}
-
-.controls {
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
-    /* background-color: var(--background-alt); */
-    display: flex;
-    padding: .5rem;
-    border-radius: 1.5rem;
-    /* border: var(--border); */
-}
-
-.controls .items {
-    display: flex;
-    gap: .5rem;
-}
-
-.controls svg {
-    width: 1.5rem;
-    aspect-ratio: 1;
-    cursor: pointer;
-    transition: var(--t);
-}
-
-.controls svg:active {
-    transform: scale(.8);
-}
-
-.controls button:active {
-    background-color: var(--background-light);
 }

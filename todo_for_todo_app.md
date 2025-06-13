@@ -6,7 +6,7 @@ Créer une application de gestion de tâches complète (style Todoist), avec tou
 ---
 
 ## ✅ Fonctionnalités de base
-- [x] Cree un groupe de taches
+- [ ] Cree un groupe de taches
 - [ ] Ajouter une tâche
 - [ ] Éditer une tâche
 - [ ] Supprimer une tâche

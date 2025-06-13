@@ -1,29 +1,18 @@
 
-import { Calendar } from './calendar.js';
 import { createHtmlElement } from './functions.js';
 import { createTaskElement, createGroupElement } from './ui.js';
-
-
-
-let calendar = new Calendar(document.querySelector(".calendar"))
-let date = new Date()
-let year = date.getFullYear()
-let month = date.getMonth()
-calendar.init(year, month)
-
-
 
 
 const UI = {
     familytask: {
         completed: 3,
         name: "Family Task",
-        groupes: {
-            1: {
+        groupes:
+            [{
                 title: "Prof",
                 tasks: [
                     {
-                        description: "je suis le plus fort du monde j'ai la plus grande logique ma lorem lorem10  ",
+                        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam aliquid minus impedit deserunt accusamus, iste ut eos laborum culpa itaque commodi! Ab consequuntur necessitatibus nulla laborum veritatis laboriosam reprehenderit natus, placeat pariatur expedita? Dignissimos quibusdam vero, quos debitis fugiat perferendis natus nam suscipit, expedita odio sit nisi officia cum dolorem enim repellendus. At consequatur, velit distinctio quasi consequuntur dolorem delectus esse possimus animi alias repellendus labore minima incidunt, doloribus nisi assumenda corporis pariatur. Fugiat, nam quibusdam! Consequatur architecto optio nemo consectetur, quisquam, dolorem similique illum saepe eligendi voluptatem voluptas, dolores maxime! Quos tempora excepturi harum accusantium delectus, incidunt aliquid enim.je suis le plus fort du monde j'ai la plus grande logique ma lorem lorem10  ",
                         statut: "completed",
                         dateDeCreation: "lundi 30 a 10h23",
                         dateLastUpdate: null,
@@ -41,8 +30,7 @@ const UI = {
                         fichiersJoints: [],
                     },
                 ]
-            },
-            2: {
+            }, {
                 title: "Prof",
                 tasks: [
                     {
@@ -64,98 +52,95 @@ const UI = {
                         fichiersJoints: [],
                     },
                 ]
-            }
-        }
+            }],
     },
     assigned: {
         completed: 3,
         name: "Assigned",
-        groupes: {
-            1: {
-                title: "Prof",
-                tasks: [
-                    {
-                        description: "VS code",
-                        statut: null
-                    }
-                ]
-            }
+        groupes: [{
+            title: "Prof",
+            tasks: [
+                {
+                    description: "VS code",
+                    statut: null
+                }
+            ]
         }
+        ]
     },
     today: {
         completed: 0,
         name: "Today",
-        groupes: {
-            gn: {
-                title: "GN nuit prod",
-                tasks: [
-                    {
-                        description: "Vendre les meuble de la plaine ville de douala fff et si possible je suis prod",
-                        statut: "completed",
-                        dateDeCreation: "Today with 12h32",
-                        dateLastUpdate: null,
-                        priorite: 1,
-                        categorie: "projet",
-                        fichiersJoints: [
-                        ],
-                    },
-                    {
-                        description: "laisse moi tranquille",
-                        statut: "pending",
-                        dateDeCreation: "lundi 30 a 10h23",
-                        dateLastUpdate: null,
-                        priorite: 1,
-                        categorie: "projet",
-                        fichiersJoints: [
-                            "./src/images/cook.png",
-                            "./src/images/c1.png",
-                            "./src/images/cook.png",
-                            "./src/images/cook1.png",
-                            "./src/images/c2.png",
-                            "./src/images/cook.png",
-                            "./src/images/cook.png",
-                            "./src/images/cook.png",
-                        ],
-                    },
+        groupes: [{
+            title: "GN nuit prod",
+            tasks: [
+                {
+                    description: "Vendre les meuble de la plaine ville de douala fff et si possible je suis prod",
+                    statut: "completed",
+                    dateDeCreation: "Today with 12h32",
+                    dateLastUpdate: null,
+                    priorite: 1,
+                    categorie: "projet",
+                    fichiersJoints: [
+                    ],
+                },
+                {
+                    description: "laisse moi tranquille",
+                    statut: "pending",
+                    dateDeCreation: "lundi 30 a 10h23",
+                    dateLastUpdate: null,
+                    priorite: 1,
+                    categorie: "projet",
+                    fichiersJoints: [
+                        "./src/images/cook.png",
+                        "./src/images/c1.png",
+                        "./src/images/cook.png",
+                        "./src/images/cook1.png",
+                        "./src/images/c2.png",
+                        "./src/images/cook.png",
+                        "./src/images/cook.png",
+                        "./src/images/cook.png",
+                    ],
+                },
 
-                ]
-            },
-            gn2: {
-                title: "Jojo",
-                tasks: [
-                    {
-                        description: "Vendre la banane",
-                        statut: "completed",
-                        dateDeCreation: "lundi 30 a 10h23",
-                        dateLastUpdate: null,
-                        priorite: 0,
-                        categorie: "projet",
-                        fichiersJoints: [
-                        ],
-                    },
-                    {
-                        description: "partir a Baf",
-                        statut: "pending",
-                        dateDeCreation: "lundi 30 a 10h23",
-                        dateLastUpdate: null,
-                        priorite: 0,
-                        categorie: "projet",
-                        fichiersJoints: [
-                            "./src/images/cook1.png",
-                            "./src/images/c1.png",
-                            "./src/images/cook1.png",
-                        ],
-                    },
+            ]
+        },
+        {
+            title: "Jojo",
+            tasks: [
+                {
+                    description: "Vendre la banane",
+                    statut: "completed",
+                    dateDeCreation: "lundi 30 a 10h23",
+                    dateLastUpdate: null,
+                    priorite: 0,
+                    categorie: "projet",
+                    fichiersJoints: [
+                    ],
+                },
+                {
+                    description: "partir a Baf",
+                    statut: "pending",
+                    dateDeCreation: "lundi 30 a 10h23",
+                    dateLastUpdate: null,
+                    priorite: 0,
+                    categorie: "projet",
+                    fichiersJoints: [
+                        "./src/images/cook1.png",
+                        "./src/images/c1.png",
+                        "./src/images/cook1.png",
+                    ],
+                },
 
-                ]
-            },
-        }
+            ]
+        },
+        ]
     },
     completed: {
         completed: 0,
         name: "Completed task",
-        groupes: {
-            gn: {
+        groupes: [
+            {
                 title: "Meilleur",
                 tasks: [
                     {
@@ -183,13 +168,10 @@ const UI = {
                             "./src/images/cook.png",
                             "./src/images/cook.png",
                             "./src/images/cook.png",
-                            "./src/images/cook.png",
                         ],
-                    },
-
-                ]
+                    }],
             },
-            gn2: {
+            {
                 title: "Ulrich",
                 tasks: [
                     {
@@ -214,75 +196,73 @@ const UI = {
                             "./src/images/cook.png",
                         ],
                     },
-
                 ]
             },
-        }
+        ]
     },
     all: {
         completed: 0,
         name: "All",
-        groupes: {
-            0: {
-                title: "@shadow",
-                tasks: [
-                    {
-                        description: "film",
-                        statut: "",
-                        dateDeCreation: "mardi 30 a 10h23",
-                        dateLastUpdate: null,
-                        priorite: 1,
-                        categorie: "projet",
-                        fichiersJoints: [
-                        ],
-                    },
-                    {
-                        description: "Ok my brother",
-                        statut: "pending",
-                        dateDeCreation: "lundi 30 a 10h23",
-                        dateLastUpdate: null,
-                        priorite: 1,
-                        categorie: "projet",
-                        fichiersJoints: [
-                            "./src/images/cook.png",
-                        ],
-                    },
+        groupes: [{
+            title: "All task",
+            tasks: [
+                {
+                    description: "film",
+                    statut: "",
+                    dateDeCreation: "mardi 30 a 10h23",
+                    dateLastUpdate: null,
+                    priorite: 1,
+                    categorie: "projet",
+                    fichiersJoints: [
+                    ],
+                },
+                {
+                    description: "Ok my brother",
+                    statut: "pending",
+                    dateDeCreation: "lundi 30 a 10h23",
+                    dateLastUpdate: null,
+                    priorite: 1,
+                    categorie: "projet",
+                    fichiersJoints: [
+                        "./src/images/cook.png",
+                    ],
+                },
 
-                ]
-            },
-            2: {
-                title: "john doe",
-                tasks: [
-                    {
-                        description: "Vendre des produit manufacturer",
-                        statut: "completed",
-                        dateDeCreation: "vendredi 30 a 12:00",
-                        dateLastUpdate: null,
-                        priorite: 0,
-                        categorie: "projet",
-                        fichiersJoints: [
-                            "./src/images/cook1.png",
-                            "./src/images/cook.png",
-                        ],
-                    },
-                    {
-                        description: "ok google la platform",
-                        statut: "pending",
-                        dateDeCreation: "lundi 30 a 10h",
-                        dateLastUpdate: null,
-                        priorite: 0,
-                        categorie: "projet",
-                        fichiersJoints: [
-                            "./src/images/cook.png",
-                            "./src/images/cook.png",
-                            "./src/images/cook.png",
-                            "./src/images/cook.png",
-                        ],
-                    },
+            ]
+        },
+        {
+            title: "john doe",
+            tasks: [
+                {
+                    description: "Vendre des produit manufacturer",
+                    statut: "completed",
+                    dateDeCreation: "vendredi 30 a 12:00",
+                    dateLastUpdate: null,
+                    priorite: 0,
+                    categorie: "projet",
+                    fichiersJoints: [
+                        "./src/images/cook1.png",
+                        "./src/images/cook.png",
+                    ],
+                },
+                {
+                    description: "ok google la platform",
+                    statut: "pending",
+                    dateDeCreation: "lundi 30 a 10h",
+                    dateLastUpdate: null,
+                    priorite: 0,
+                    categorie: "projet",
+                    fichiersJoints: [
+                        "./src/images/cook.png",
+                        "./src/images/cook.png",
+                        "./src/images/cook.png",
+                        "./src/images/cook.png",
+                    ],
+                },
 
-                ]
-            },
-        }
+            ]
+        },
+        ]
     },
 }
 
@@ -299,15 +279,16 @@ function switchFolder(target, object) {
     const clearBtn = document.querySelector(".container .clear")
     const groupe = containerTask.querySelector(".group-task")
     groupe.innerHTML = ''
-    for (const [key, value] of Object.entries(object)){
-        if(key === target){
+    for (const [key, value] of Object.entries(object)) {
+        if (key === target) {
             titleContainer.textContent = value.name
             text.textContent = `${value.completed} task is completed`
 
-            for(const [nameG, valueG] of Object.entries(value.groupes)){
+            for (const [nameG, valueG] of Object.entries(value.groupes)) {
                 const newGroupe = createGroupElement(nameG, valueG)
                 groupe.append(newGroupe)
             }
+
         }
     }
 }

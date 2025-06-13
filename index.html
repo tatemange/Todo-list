@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>todo</title>
     <link rel="stylesheet" href="./src/css/styles.css">
+    <link rel="stylesheet" href="./src/css/controls.css">
     <script src="./src/js/main.js" type="module" defer></script>
 </head>
 
@@ -136,15 +137,9 @@
             <span class="list-text">list</span>
             <ul class="list">
                 <li>
-                    <span class="icon">C</span>
-                    <a href="#">Calendar</a>
+                    <span class="icon">m</span>
+                    <a href="#">my list</a>
                 </li>
-
-                <li>
-                    <span class="icon">#</span>
-                    <a href="#">dmaison</a>
-                </li>
-
                 <li class="active">
                     <span class="icon">m</span>
                     <a href="#">maison</a>
@@ -181,19 +176,25 @@
 
         <div class="controls">
             <div class="items">
-                <svg version="1.1" id="Capa_1" viewBox="0 0 50 50" xml:space="preserve">
-                    <circle style="fill:var(--first-color);" cx="25" cy="25" r="25" />
-                    <line
-                        style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
-                        x1="25" y1="13" x2="25" y2="38" />
-                    <line
-                        style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
-                        x1="37.5" y1="25" x2="12.5" y2="25" />
-                </svg>
+                <div class="item">
+                    <!-- <svg version="1.1" id="Capa_1" viewBox="0 0 50 50" xml:space="preserve">
+                        <circle style="fill:var(--first-color);" cx="25" cy="25" r="25" />
+                        <line
+                            style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                            x1="25" y1="13" x2="25" y2="38" />
+                        <line
+                            style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                            x1="37.5" y1="25" x2="12.5" y2="25" />
+                    </svg> -->
+                    <button class="add-groupe">add new groupe</button>
+                </div>
+                <div class="item">
+                    <button class="view-calendar">calendar</button>
+                </div>
             </div>
         </div>
 
-        <div class="container-tasks colum">
+        <div class="container-tasks column">
             <aside class="aside-left">
                 <div class="group-task">
                     <!-- <div class="group">
@@ -225,42 +226,6 @@
                     </div> -->
                 </div>
             </aside>
-            <div class="calendar mask">
-                <div class="header">
-                    <div class="left">
-                        <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="512"
-                            height="512">
-                            <path
-                                d="M17.17,24a1,1,0,0,1-.71-.29L8.29,15.54a5,5,0,0,1,0-7.08L16.46.29a1,1,0,1,1,1.42,1.42L9.71,9.88a3,3,0,0,0,0,4.24l8.17,8.17a1,1,0,0,1,0,1.42A1,1,0,0,1,17.17,24Z" />
-                        </svg>
-                    </div>
-                    <div class="center">
-                        <span class="month">October</span>
-                        <span class="year">2023</span>
-                    </div>
-                    <div class="right">
-                        <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="512"
-                            height="512">
-                            <path
-                                d="M7,24a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l8.17-8.17a3,3,0,0,0,0-4.24L6.29,1.71A1,1,0,0,1,7.71.29l8.17,8.17a5,5,0,0,1,0,7.08L7.71,23.71A1,1,0,0,1,7,24Z" />
-                        </svg>
-                    </div>
-                </div>
-                <div class="body">
-                    <div class="days">
-                        <span class="day">Mon</span>
-                        <span class="day">Tue</span>
-                        <span class="day">Wed</span>
-                        <span class="day">Thu</span>
-                        <span class="day">Fri</span>
-                        <span class="day">Sat</span>
-                        <span class="day">Sun</span>
-                    </div>
-
-                    <div class="dates">
-                    </div>
-                </div>
-            </div>
         </div>
 
         <form action="#" class="formGroup mask">
@@ -286,10 +251,7 @@
             </fieldset>
         </form>
 
-                        priorite: 1,
-                        categorie: "projet",
-                        fichiersJoints: [],
-        <form action="#" class="formTask masks">
+        <form action="#" class="formTask mask">
             <fieldset>
                 <h1>create a new Task</h1>
                 <span class="note">
